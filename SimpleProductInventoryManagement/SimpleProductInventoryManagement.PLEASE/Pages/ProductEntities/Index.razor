@@ -1,0 +1,97 @@
+﻿@page "/products/"
+@using SimpleProductInventoryManagement.Contracts
+@using SimpleProductInventoryManagement.Models
+@using Microsoft.AspNetCore.Components.QuickGrid
+
+<h3>Products</h3>
+
+<div class="m-2 d-flex justify-content-between align-items-center">
+    <input @bind="SearchTerm" @bind:event="oninput" class="form-control w-25" placeholder="Search..." />
+    <button @onclick="CreateProductEntity" class="btn btn-success">Add Product</button>
+</div>
+
+@if (Products == null)
+{
+    <p>Loading Data...</p>
+}
+else
+{
+    <QuickGrid Items="FilteredProducts.AsQueryable()" TGridItem="ProductEntityVM">
+        
+        <PropertyColumn Property="p => p.Id" Title="Id" Sortable="true" />
+        <PropertyColumn Property="p => p.Name" Title="Name" Sortable="true" />
+        <PropertyColumn Property="p => p.Description" Title="Description" Sortable="true" />
+        <PropertyColumn Property="p => p.Price" Title="Price" Sortable="true" />
+
+        <PropertyColumn Property="p => p.Quantity" Title="Quantity" Sortable="true" />
+        <TemplateColumn Title="Actions" Context="context">
+            <AuthorizeView Roles="Admin" Context="authContext">
+                <Authorized>
+                    <button @onclick="() => EditProductEntity(context.Id)" class="btn btn-warning">Edit</button>
+                    <button @onclick="() => DeleteProductEntity(context.Id)" class="btn btn-danger">Delete</button>
+                    <button @onclick="() => DetailsProductEntity(context.Id)" class="btn btn-info">Details</button>
+                </Authorized>
+                <NotAuthorized>
+                    <button @onclick="() => DetailsProductEntity(context.Id)" class="btn btn-info">Details</button>
+                </NotAuthorized>
+            </AuthorizeView>
+        </TemplateColumn>
+        
+         
+
+    </QuickGrid>
+}
+
+@code {
+    [Inject] public NavigationManager NavigationManager { get; set; }
+    [Inject] public IProductEntityService ProductEntityService { get; set; }
+
+    private List<ProductEntityVM> Products { get; set; }
+    private string SearchTerm { get; set; } = string.Empty;
+    public string Message { get; set; } = string.Empty;
+
+    // Computed filtered list
+    private IEnumerable<ProductEntityVM> FilteredProducts =>
+        string.IsNullOrWhiteSpace(SearchTerm)
+            ? Products
+            : Products.Where(p =>
+                p.Id.ToString().Contains(SearchTerm, StringComparison.OrdinalIgnoreCase) ||
+                (p.Name?.Contains(SearchTerm, StringComparison.OrdinalIgnoreCase) ?? false) ||
+                (p.Description?.Contains(SearchTerm, StringComparison.OrdinalIgnoreCase) ?? false) ||
+                p.Price.ToString().Contains(SearchTerm, StringComparison.OrdinalIgnoreCase) ||
+                p.Quantity.ToString().Contains(SearchTerm, StringComparison.OrdinalIgnoreCase));
+
+    protected override async Task OnInitializedAsync()
+    {
+        Products = await ProductEntityService.GetProductEntities();
+    }
+
+    protected void CreateProductEntity()
+    {
+        NavigationManager.NavigateTo("/products/create");
+    }
+
+    protected void EditProductEntity(int id)
+    {
+
+        NavigationManager.NavigateTo($"/products/edit/{id}");
+    }
+
+    protected void DetailsProductEntity(int id)
+    {
+        NavigationManager.NavigateTo($"/products/details/{id}");
+    }
+
+    protected async Task DeleteProductEntity(int id)
+    {
+        var response = await ProductEntityService.DeleteProductEntity(id);
+        if (response.Success)
+        {
+            await OnInitializedAsync();
+        }
+        else
+        {
+            Message = response.Message;
+        }
+    }
+}
