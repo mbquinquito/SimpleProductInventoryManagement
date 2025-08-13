@@ -14,13 +14,7 @@
 3. Set up the database
 	- Create a MySQL database (example: product_inventory_db)
 	- Open appsettings.json in the API project and update connection string
-	- Apply migrations (Use API as startup project)
-		- Products Table and data seeding (Default project in Package Manager Console: Persistence)
-			- add-migration InitProduct -Context ProductDatabaseContext
-			- update-database -Context ProductDatabaseContext
-		- Identity Table and data seeding (Default project in Package Manager Console: Identity)
-			- add-migration InitIdentity -Context ProductEntityIdentityDbContext
-			- update-database -Context ProductEntityIdentityDbContext
+	- Import the Dump.sql file
 4. Run the application
 	- Set up the BlazorUI and API as startup project.
 	- Run
@@ -36,6 +30,6 @@
 ### Products
 - GET `/api/products` – Get all products
 - GET `/api/products/{id}` – Get product by ID
-- POST `/api/products` – Create new product (Admin only)
-- PUT `/api/products/{id}` – Update product (Admin only)
-- DELETE `/api/products/{id}` – Delete product (Admin only)
+- POST `/api/products` – Create new product 
+- PUT `/api/products/{id}` – Update product 
+- DELETE `/api/products/{id}` – Delete product 

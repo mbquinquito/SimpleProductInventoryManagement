@@ -24,6 +24,7 @@ namespace SimpleProductInventoryManagement.Api.Controllers
         {
             this._mediator = mediator;
             this._logger = logger;
+            Console.WriteLine("=== ProductsController loaded ===");
         }
         // GET: api/<productsController>
         [HttpGet]
@@ -47,7 +48,7 @@ namespace SimpleProductInventoryManagement.Api.Controllers
         [HttpPost]
         [ProducesResponseType(201)]
         [ProducesResponseType(400)]
-        public async Task<ActionResult> Post(CreateProductEntityCommand productEntity)
+        public async Task<ActionResult> Post([FromBody] CreateProductEntityCommand productEntity)
         {
             var response = await _mediator.Send(productEntity);
             return CreatedAtAction(nameof(Get), new { id = response });

@@ -2,6 +2,8 @@
 using SimpleProductInventoryManagement.Application;
 using SimpleProductInventoryManagement.Persistence;
 using SimpleProductInventoryManagement.Identity;
+using SimpleProductInventoryManagement.Api.Controllers;
+using Microsoft.AspNetCore.Routing;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,7 +12,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddApplicationServices();
 builder.Services.AddPersistenceServices(builder.Configuration);
 builder.Services.AddIdentityServices(builder.Configuration);
-
+builder.Logging.AddConsole();
 builder.Services.AddControllers();
 
 builder.Services.AddCors(options =>
@@ -35,7 +37,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
 app.UseCors("AllowAllOrigins");
 
@@ -43,5 +45,26 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+// Dump all endpoints for debugging
+var endpointDataSource = app.Services.GetRequiredService<EndpointDataSource>();
+Console.WriteLine("=== Registered Endpoints ===");
+foreach (var endpoint in endpointDataSource.Endpoints)
+{
+    var routeEndpoint = endpoint as RouteEndpoint;
+    if (routeEndpoint != null)
+    {
+        var httpMethods = routeEndpoint.Metadata
+            .OfType<HttpMethodMetadata>()
+            .FirstOrDefault()?.HttpMethods;
+
+        var pattern = routeEndpoint.RoutePattern.RawText;
+        Console.WriteLine($"{string.Join(",", httpMethods ?? new[] { "N/A" })} => {pattern}");
+    }
+    else
+    {
+        Console.WriteLine(endpoint.DisplayName);
+    }
+}
+Console.WriteLine("=== End of Endpoints ===");
 
 app.Run();
