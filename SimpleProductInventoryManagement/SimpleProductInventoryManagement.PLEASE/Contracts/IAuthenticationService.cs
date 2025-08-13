@@ -1,4 +1,4 @@
-﻿namespace SimpleProductInventoryManagement.PLEASE.Contracts
+﻿namespace SimpleProductInventoryManagement.BlazorUI.Contracts
 {
     public interface IAuthenticationService
     {

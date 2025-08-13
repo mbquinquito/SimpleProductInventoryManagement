@@ -1,11 +1,11 @@
 ﻿
 using Blazored.LocalStorage;
 using SimpleProductInventoryManagement.Contracts;
-using SimpleProductInventoryManagement.Models;
-using SimpleProductInventoryManagement.Services.Base;
+using SimpleProductInventoryManagement.BlazorUI.Models;
+using SimpleProductInventoryManagement.BlazorUI.Services.Base;
 using System.Net.Http.Json;
 
-namespace SimpleProductInventoryManagement.Services
+namespace SimpleProductInventoryManagement.BlazorUI.Services
 {
     public class ProductEntityService : IProductEntityService
     {

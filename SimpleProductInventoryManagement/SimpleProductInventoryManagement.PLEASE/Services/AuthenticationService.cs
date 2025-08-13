@@ -1,11 +1,11 @@
 ﻿using Blazored.LocalStorage;
 using Microsoft.AspNetCore.Components.Authorization;
-using SimpleProductInventoryManagement.PLEASE.Contracts;
-using SimpleProductInventoryManagement.PLEASE.Models.Authentication;
-using SimpleProductInventoryManagement.PLEASE.Providers;
+using SimpleProductInventoryManagement.BlazorUI.Providers;
+using SimpleProductInventoryManagement.BlazorUI.Contracts;
+using SimpleProductInventoryManagement.BlazorUI.Models.Authentication;
 using System.Net.Http.Json;
 
-namespace SimpleProductInventoryManagement.PLEASE.Services
+namespace SimpleProductInventoryManagement.BlazorUI.Services
 {
     public class AuthenticationService : IAuthenticationService
     {
@@ -15,9 +15,9 @@ namespace SimpleProductInventoryManagement.PLEASE.Services
 
         public AuthenticationService(IHttpClientFactory factory, ILocalStorageService localstorage, AuthenticationStateProvider authenticationStateProvider)
         {
-            this._httpClient = factory.CreateClient("PublicAPI");
-            this._localstorage = localstorage;
-            this._authenticationStateProvider = authenticationStateProvider;
+            _httpClient = factory.CreateClient("PublicAPI");
+            _localstorage = localstorage;
+            _authenticationStateProvider = authenticationStateProvider;
         }
 
         public async Task<bool> AuthenticateAsync(string email, string password)

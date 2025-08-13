@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace SimpleProductInventoryManagement.PLEASE.Models;
+namespace SimpleProductInventoryManagement.BlazorUI.Models;
 
 public class LoginVM
 {

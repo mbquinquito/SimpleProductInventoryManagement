@@ -1,6 +1,6 @@
 ﻿
-using SimpleProductInventoryManagement.Models;
-using SimpleProductInventoryManagement.Services.Base;
+using SimpleProductInventoryManagement.BlazorUI.Models;
+using SimpleProductInventoryManagement.BlazorUI.Services.Base;
 
 namespace SimpleProductInventoryManagement.Contracts
 {

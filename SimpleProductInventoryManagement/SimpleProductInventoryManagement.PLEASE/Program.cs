@@ -3,12 +3,11 @@ using Blazored.Toast;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using SimpleProductInventoryManagement.BlazorUI.Providers;
+using SimpleProductInventoryManagement.BlazorUI.Services;
 using SimpleProductInventoryManagement.Contracts;
-using SimpleProductInventoryManagement.PLEASE;
-using SimpleProductInventoryManagement.PLEASE.Contracts;
-using SimpleProductInventoryManagement.PLEASE.Providers;
-using SimpleProductInventoryManagement.PLEASE.Services;
-using SimpleProductInventoryManagement.Services;
+using SimpleProductInventoryManagement.BlazorUI;
+using SimpleProductInventoryManagement.BlazorUI.Contracts;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 

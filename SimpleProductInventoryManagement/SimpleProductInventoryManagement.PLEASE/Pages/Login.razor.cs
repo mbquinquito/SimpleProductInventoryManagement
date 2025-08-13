@@ -1,9 +1,9 @@
 
 using Microsoft.AspNetCore.Components;
-using SimpleProductInventoryManagement.PLEASE.Contracts;
-using SimpleProductInventoryManagement.PLEASE.Models;
+using SimpleProductInventoryManagement.BlazorUI.Contracts;
+using SimpleProductInventoryManagement.BlazorUI.Models;
 
-namespace SimpleProductInventoryManagement.PLEASE.Pages
+namespace SimpleProductInventoryManagement.BlazorUI.Pages
 {
     public partial class Login
     {

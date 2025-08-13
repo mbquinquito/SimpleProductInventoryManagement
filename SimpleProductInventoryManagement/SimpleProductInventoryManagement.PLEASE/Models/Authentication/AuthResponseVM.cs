@@ -1,4 +1,4 @@
-﻿namespace SimpleProductInventoryManagement.PLEASE.Models.Authentication
+﻿namespace SimpleProductInventoryManagement.BlazorUI.Models.Authentication
 {
     public class AuthResponseVM
     {

@@ -1,12 +1,13 @@
 
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Authorization;
-using SimpleProductInventoryManagement.PLEASE.Contracts;
-using SimpleProductInventoryManagement.PLEASE.Providers;
+using SimpleProductInventoryManagement.BlazorUI.Providers;
+using SimpleProductInventoryManagement.BlazorUI.Contracts;
 
-namespace SimpleProductInventoryManagement.PLEASE.Pages;
 
-public partial class Index
+namespace SimpleProductInventoryManagement.BlazorUI.Pages;
+
+public partial class Index : ComponentBase
 {
     [Inject]
     private AuthenticationStateProvider AuthenticationStateProvider { get; set; }

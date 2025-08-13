@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Components.Web.Virtualization;
 using Microsoft.AspNetCore.Components.WebAssembly.Http;
 using Microsoft.JSInterop;
 using SimpleProductInventoryManagement.Contracts;
-using SimpleProductInventoryManagement.Models;
+using SimpleProductInventoryManagement.BlazorUI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +17,7 @@ using System.Net.Http.Json;
 using System.Numerics;
 using System.Threading.Tasks;
 
-namespace SimpleProductInventoryManagement.PLEASE.Pages.ProductEntities
+namespace SimpleProductInventoryManagement.BlazorUI.Pages.ProductEntities
 {
     public partial class Create
     {

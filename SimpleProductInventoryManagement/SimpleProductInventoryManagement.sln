@@ -23,7 +23,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleProductInventoryManag
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleProductInventoryManagement.Api", "..\SimpleProductInventoryManagement.Api\SimpleProductInventoryManagement.Api.csproj", "{12F1F775-B4E9-4B49-B5C5-06C2FCCF58F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleProductInventoryManagement.PLEASE", "SimpleProductInventoryManagement.PLEASE\SimpleProductInventoryManagement.PLEASE.csproj", "{306869BB-2352-4A55-B9F4-B14E7EA2CAD8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleProductInventoryManagement.BlazorUI", "SimpleProductInventoryManagement.PLEASE\SimpleProductInventoryManagement.BlazorUI.csproj", "{306869BB-2352-4A55-B9F4-B14E7EA2CAD8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleProductInventoryManagement.Identity", "SimpleProductInventoryManagement.Identity\SimpleProductInventoryManagement.Identity.csproj", "{00B77A01-05AD-4200-9301-6BB638D53360}"
 EndProject

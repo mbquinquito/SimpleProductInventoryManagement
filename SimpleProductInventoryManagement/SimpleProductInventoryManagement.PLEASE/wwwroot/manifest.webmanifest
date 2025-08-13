@@ -1,6 +1,6 @@
 {
-  "name": "SimpleProductInventoryManagement.PLEASE",
-  "short_name": "SimpleProductInventoryManagement.PLEASE",
+  "name": "SimpleProductInventoryManagement.BlazorUI",
+  "short_name": "SimpleProductInventoryManagement.BlazorUI",
   "id": "./",
   "start_url": "./",
   "display": "standalone",

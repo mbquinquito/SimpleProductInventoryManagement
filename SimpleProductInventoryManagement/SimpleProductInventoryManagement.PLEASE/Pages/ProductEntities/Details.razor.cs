@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Components;
 using SimpleProductInventoryManagement.Contracts;
-using SimpleProductInventoryManagement.Models;
+using SimpleProductInventoryManagement.BlazorUI.Models;
 
-namespace SimpleProductInventoryManagement.PLEASE.Pages.ProductEntities
+namespace SimpleProductInventoryManagement.BlazorUI.Pages.ProductEntities
 {
     public partial class Details
     {

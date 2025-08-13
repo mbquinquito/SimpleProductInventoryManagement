@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Components.Authorization;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 
-namespace SimpleProductInventoryManagement.PLEASE.Providers
+namespace SimpleProductInventoryManagement.BlazorUI.Providers
 {
     public class ApiAuthenticationStateProvider : AuthenticationStateProvider
     {

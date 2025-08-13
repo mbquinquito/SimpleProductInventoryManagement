@@ -1,4 +1,4 @@
-﻿namespace SimpleProductInventoryManagement.Services.Base
+﻿namespace SimpleProductInventoryManagement.BlazorUI.Services.Base
 {
     public class Response<T>
     {
