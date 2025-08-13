@@ -5,7 +5,7 @@
     <Authorized>
     <h1 class="text-center">
         Welcome to Product Inventory Management,
-        @($"{context.User.FindFirst("firstname")?.Value} {context.User.FindFirst("lastname")?.Value}")
+        @($"{context.User.FindFirst("firstname")?.Value} {context.User.FindFirst("lastname")?.Value}")!
     </h1>
     <br />
     <br />

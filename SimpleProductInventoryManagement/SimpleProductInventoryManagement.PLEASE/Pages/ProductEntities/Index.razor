@@ -18,14 +18,17 @@
 }
 else
 {
-    <QuickGrid Items="FilteredProducts.AsQueryable()" TGridItem="ProductEntityVM">
-        
+    <QuickGrid Items="FilteredProducts.AsQueryable()"
+               TGridItem="ProductEntityVM"
+               Pagination="@pagination"
+               Class="table table-striped">
+
         <PropertyColumn Property="p => p.Id" Title="Id" Sortable="true" />
         <PropertyColumn Property="p => p.Name" Title="Name" Sortable="true" />
         <PropertyColumn Property="p => p.Description" Title="Description" Sortable="true" />
         <PropertyColumn Property="p => p.Price" Title="Price" Sortable="true" />
-
         <PropertyColumn Property="p => p.Quantity" Title="Quantity" Sortable="true" />
+
         <TemplateColumn Title="Actions" Context="context">
             <AuthorizeView Roles="Admin" Context="authContext">
                 <Authorized>
@@ -38,13 +41,14 @@ else
                 </NotAuthorized>
             </AuthorizeView>
         </TemplateColumn>
-        
-         
-
     </QuickGrid>
+
+    <Paginator State="@pagination" />
 }
 
 @code {
+    private PaginationState pagination = new() { ItemsPerPage = 5 };
+
     [Inject] public NavigationManager NavigationManager { get; set; }
     [Inject] public IProductEntityService ProductEntityService { get; set; }
 
@@ -52,7 +56,6 @@ else
     private string SearchTerm { get; set; } = string.Empty;
     public string Message { get; set; } = string.Empty;
 
-    // Computed filtered list
     private IEnumerable<ProductEntityVM> FilteredProducts =>
         string.IsNullOrWhiteSpace(SearchTerm)
             ? Products
@@ -68,32 +71,16 @@ else
         Products = await ProductEntityService.GetProductEntities();
     }
 
-    protected void CreateProductEntity()
-    {
-        NavigationManager.NavigateTo("/products/create");
-    }
-
-    protected void EditProductEntity(int id)
-    {
-
-        NavigationManager.NavigateTo($"/products/edit/{id}");
-    }
-
-    protected void DetailsProductEntity(int id)
-    {
-        NavigationManager.NavigateTo($"/products/details/{id}");
-    }
+    protected void CreateProductEntity() => NavigationManager.NavigateTo("/products/create");
+    protected void EditProductEntity(int id) => NavigationManager.NavigateTo($"/products/edit/{id}");
+    protected void DetailsProductEntity(int id) => NavigationManager.NavigateTo($"/products/details/{id}");
 
     protected async Task DeleteProductEntity(int id)
     {
         var response = await ProductEntityService.DeleteProductEntity(id);
         if (response.Success)
-        {
             await OnInitializedAsync();
-        }
         else
-        {
             Message = response.Message;
-        }
     }
 }

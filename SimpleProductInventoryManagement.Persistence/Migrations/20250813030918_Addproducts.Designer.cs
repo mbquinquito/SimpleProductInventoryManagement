@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SimpleProductInventoryManagement.Persistence.DatabaseContext;
 
@@ -11,9 +12,11 @@ using SimpleProductInventoryManagement.Persistence.DatabaseContext;
 namespace SimpleProductInventoryManagement.Persistence.Migrations
 {
     [DbContext(typeof(ProductDatabaseContext))]
-    partial class ProductDatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20250813030918_Addproducts")]
+    partial class Addproducts
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -60,62 +63,52 @@ namespace SimpleProductInventoryManagement.Persistence.Migrations
                         new
                         {
                             Id = 1,
-                            CreatedAt = new DateTime(2025, 8, 13, 11, 10, 51, 315, DateTimeKind.Local).AddTicks(2646),
+                            CreatedAt = new DateTime(2025, 8, 13, 11, 9, 17, 681, DateTimeKind.Local).AddTicks(7157),
                             Description = "Fruit",
                             Name = "Dragonfruit",
                             Price = 19.99m,
                             Quantity = 100,
-                            UpdatedAt = new DateTime(2025, 8, 13, 11, 10, 51, 315, DateTimeKind.Local).AddTicks(2647)
+                            UpdatedAt = new DateTime(2025, 8, 13, 11, 9, 17, 681, DateTimeKind.Local).AddTicks(7159)
                         },
                         new
                         {
                             Id = 2,
-                            CreatedAt = new DateTime(2025, 8, 13, 11, 10, 51, 315, DateTimeKind.Local).AddTicks(2650),
+                            CreatedAt = new DateTime(2025, 8, 13, 11, 9, 17, 681, DateTimeKind.Local).AddTicks(7162),
                             Description = "Fruit",
                             Name = "Grapes",
                             Price = 39.99m,
                             Quantity = 400,
-                            UpdatedAt = new DateTime(2025, 8, 13, 11, 10, 51, 315, DateTimeKind.Local).AddTicks(2651)
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CreatedAt = new DateTime(2025, 8, 13, 11, 10, 51, 315, DateTimeKind.Local).AddTicks(2653),
-                            Description = "Fruit",
-                            Name = "Pineapple",
-                            Price = 69.99m,
-                            Quantity = 900,
-                            UpdatedAt = new DateTime(2025, 8, 13, 11, 10, 51, 315, DateTimeKind.Local).AddTicks(2653)
+                            UpdatedAt = new DateTime(2025, 8, 13, 11, 9, 17, 681, DateTimeKind.Local).AddTicks(7162)
                         },
                         new
                         {
                             Id = 4,
-                            CreatedAt = new DateTime(2025, 8, 13, 11, 10, 51, 315, DateTimeKind.Local).AddTicks(2656),
+                            CreatedAt = new DateTime(2025, 8, 13, 11, 9, 17, 681, DateTimeKind.Local).AddTicks(7165),
                             Description = "Vegetable",
                             Name = "Carrots",
                             Price = 9.99m,
                             Quantity = 200,
-                            UpdatedAt = new DateTime(2025, 8, 13, 11, 10, 51, 315, DateTimeKind.Local).AddTicks(2656)
+                            UpdatedAt = new DateTime(2025, 8, 13, 11, 9, 17, 681, DateTimeKind.Local).AddTicks(7165)
                         },
                         new
                         {
                             Id = 5,
-                            CreatedAt = new DateTime(2025, 8, 13, 11, 10, 51, 315, DateTimeKind.Local).AddTicks(2658),
+                            CreatedAt = new DateTime(2025, 8, 13, 11, 9, 17, 681, DateTimeKind.Local).AddTicks(7167),
                             Description = "Vegetable",
                             Name = "Onions",
                             Price = 1.99m,
                             Quantity = 500,
-                            UpdatedAt = new DateTime(2025, 8, 13, 11, 10, 51, 315, DateTimeKind.Local).AddTicks(2659)
+                            UpdatedAt = new DateTime(2025, 8, 13, 11, 9, 17, 681, DateTimeKind.Local).AddTicks(7168)
                         },
                         new
                         {
                             Id = 6,
-                            CreatedAt = new DateTime(2025, 8, 13, 11, 10, 51, 315, DateTimeKind.Local).AddTicks(2661),
+                            CreatedAt = new DateTime(2025, 8, 13, 11, 9, 17, 681, DateTimeKind.Local).AddTicks(7170),
                             Description = "Fruit",
                             Name = "Mango",
                             Price = 59.99m,
                             Quantity = 480,
-                            UpdatedAt = new DateTime(2025, 8, 13, 11, 10, 51, 315, DateTimeKind.Local).AddTicks(2661)
+                            UpdatedAt = new DateTime(2025, 8, 13, 11, 9, 17, 681, DateTimeKind.Local).AddTicks(7171)
                         });
                 });
 #pragma warning restore 612, 618

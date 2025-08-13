@@ -18,10 +18,64 @@ namespace SimpleProductInventoryManagement.Persistence.Configurations
                 new ProductEntity
                 {
                     Id = 1,
-                    Name = "Sample Product",
-                    Description = "This is a sample product description.",
+                    Name = "Dragonfruit",
+                    Description = "Fruit",
                     Price = 19.99m,
                     Quantity = 100,
+                    CreatedAt = DateTime.Now,
+                    UpdatedAt = DateTime.Now
+                },
+                new ProductEntity
+                {
+                    Id = 2,
+                    Name = "Grapes",
+                    Description = "Fruit",
+                    Price = 39.99m,
+                    Quantity = 400,
+                    CreatedAt = DateTime.Now,
+                    UpdatedAt = DateTime.Now
+                },
+                new ProductEntity
+                {
+                    Id = 3,
+                    Name = "Pineapple",
+                    Description = "Fruit",
+                    Price = 69.99m,
+                    Quantity = 900,
+                    CreatedAt = DateTime.Now,
+                    UpdatedAt = DateTime.Now
+                }
+
+                ,
+                new ProductEntity
+                {
+                    Id = 4,
+                    Name = "Carrots",
+                    Description = "Vegetable",
+                    Price = 9.99m,
+                    Quantity = 200,
+                    CreatedAt = DateTime.Now,
+                    UpdatedAt = DateTime.Now
+                }
+                ,
+                new ProductEntity
+                {
+                    Id = 5,
+                    Name = "Onions",
+                    Description = "Vegetable",
+                    Price = 1.99m,
+                    Quantity = 500,
+                    CreatedAt = DateTime.Now,
+                    UpdatedAt = DateTime.Now
+                }
+                ,
+                new ProductEntity
+                {
+                    Id = 6,
+                    Name = "Mango",
+                    Description = "Fruit",
+                    Price = 59.99m,
+                    Quantity = 480,
                     CreatedAt = DateTime.Now,
                     UpdatedAt = DateTime.Now
                 }

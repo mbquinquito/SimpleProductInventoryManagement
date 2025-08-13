@@ -44,7 +44,6 @@ namespace SimpleProductInventoryManagement.Api.Controllers
         }
 
         // POST api/<productsController>
-        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ProducesResponseType(201)]
         [ProducesResponseType(400)]
@@ -55,7 +54,6 @@ namespace SimpleProductInventoryManagement.Api.Controllers
         }
 
         // PUT api/<productsController>/5
-        [Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(400)]
@@ -68,7 +66,6 @@ namespace SimpleProductInventoryManagement.Api.Controllers
         }
 
         // DELETE api/<productsController>/5
-        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
