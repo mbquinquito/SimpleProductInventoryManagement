@@ -23,9 +23,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleProductInventoryManag
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleProductInventoryManagement.Api", "..\SimpleProductInventoryManagement.Api\SimpleProductInventoryManagement.Api.csproj", "{12F1F775-B4E9-4B49-B5C5-06C2FCCF58F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleProductInventoryManagement.BlazorUI", "SimpleProductInventoryManagement.PLEASE\SimpleProductInventoryManagement.BlazorUI.csproj", "{306869BB-2352-4A55-B9F4-B14E7EA2CAD8}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleProductInventoryManagement.Identity", "SimpleProductInventoryManagement.Identity\SimpleProductInventoryManagement.Identity.csproj", "{00B77A01-05AD-4200-9301-6BB638D53360}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleProductInventoryManagement.BlazorUI", "SimpleProductInventoryManagement.BlazorUI\SimpleProductInventoryManagement.BlazorUI.csproj", "{DCC455DA-C394-4F63-9DA3-489820674BE2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,14 +49,14 @@ Global
 		{12F1F775-B4E9-4B49-B5C5-06C2FCCF58F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{12F1F775-B4E9-4B49-B5C5-06C2FCCF58F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{12F1F775-B4E9-4B49-B5C5-06C2FCCF58F2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{306869BB-2352-4A55-B9F4-B14E7EA2CAD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{306869BB-2352-4A55-B9F4-B14E7EA2CAD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{306869BB-2352-4A55-B9F4-B14E7EA2CAD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{306869BB-2352-4A55-B9F4-B14E7EA2CAD8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{00B77A01-05AD-4200-9301-6BB638D53360}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{00B77A01-05AD-4200-9301-6BB638D53360}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00B77A01-05AD-4200-9301-6BB638D53360}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00B77A01-05AD-4200-9301-6BB638D53360}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCC455DA-C394-4F63-9DA3-489820674BE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCC455DA-C394-4F63-9DA3-489820674BE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCC455DA-C394-4F63-9DA3-489820674BE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCC455DA-C394-4F63-9DA3-489820674BE2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -70,8 +70,8 @@ Global
 		{0BFFC87C-20A7-449C-B70F-983CCFBFCE07} = {58B57A10-B617-4DAA-83C3-B98130E09CFF}
 		{16265188-031F-4487-8915-F73B2833AFCA} = {C2576654-F323-444A-9BA7-7AB9235691E6}
 		{12F1F775-B4E9-4B49-B5C5-06C2FCCF58F2} = {5432D59D-DE27-435F-A145-B2F62216C9AC}
-		{306869BB-2352-4A55-B9F4-B14E7EA2CAD8} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{00B77A01-05AD-4200-9301-6BB638D53360} = {C2576654-F323-444A-9BA7-7AB9235691E6}
+		{DCC455DA-C394-4F63-9DA3-489820674BE2} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AF25F768-810C-404A-8184-4ED297770E09}
