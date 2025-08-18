@@ -21,30 +21,52 @@ namespace SimpleProductInventoryManagement.Persistence.Repositories
 
         public async Task CreateAsync(T entity)
         {
-            await _context.AddAsync(entity);
-            await _context.SaveChangesAsync();
+            var sql = @"
+        INSERT INTO Products (Name, Description, Price, Quantity, CreatedAt, UpdatedAt)
+        VALUES ({0}, {1}, {2}, {3}, NOW(), NOW());";
+
+            await _context.Database.ExecuteSqlRawAsync(
+                sql,
+                entity.Name,
+                entity.Description,
+                entity.Price,
+                entity.Quantity
+            );
         }
 
         public async Task DeleteAsync(T entity)
         {
-            _context.Remove(entity);
-            await _context.SaveChangesAsync();
+            var sql = "DELETE FROM Products WHERE Id = {0};";
+            await _context.Database.ExecuteSqlRawAsync(sql, entity.Id);
         }
 
         public async Task<IReadOnlyList<T>> GetAllAsync()
         {
-            return await _context.Set<T>().AsNoTracking().ToListAsync();
+            var sql = "SELECT * FROM Products;";
+            return await _context.Set<T>().FromSqlRaw(sql).ToListAsync();
         }
 
         public async Task<T> GetByIdAsync(int id)
         {
-            return await _context.Set<T>().AsNoTracking().FirstOrDefaultAsync(p => p.Id == id);
+            var sql = "SELECT * FROM Products WHERE Id = {0};";
+            return await _context.Set<T>().FromSqlRaw(sql, id).FirstOrDefaultAsync();
         }
 
         public async Task UpdateAsync(T entity)
         {
-            _context.Entry(entity).State = EntityState.Modified;
-            await _context.SaveChangesAsync();  
+            var sql = @"
+        UPDATE Products
+        SET Name = {0}, Description = {1}, Price = {2}, Quantity = {3}, UpdatedAt = NOW()
+        WHERE Id = {4};";
+
+            await _context.Database.ExecuteSqlRawAsync(
+                sql,
+                entity.Name,
+                entity.Description,
+                entity.Price,
+                entity.Quantity,
+                entity.Id
+            );
         }
     }
 }
